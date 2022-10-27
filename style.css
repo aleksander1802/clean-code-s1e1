@@ -19,7 +19,7 @@ body {
 
 @media (max-width: 768px) {
 
-  .aaa { 
+  .eisenhower { 
     text-align: center;
   }
 
@@ -62,7 +62,7 @@ button{
   color: #3a3A3a;
 }
 /* Heading */
-h3,
+.title,
 .task__wrapper_label {
   color: #333;
   font-weight: 700;
@@ -122,17 +122,17 @@ li > label {
 li > input[type="text"] {
   width: 226px;
 }
-button.delete img {
+.button__delete_image {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-button.delete img:hover {
+.button__delete_image:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-ul#completed-tasks label {
+.completed__wrapper label {
   text-decoration: line-through;
   color: #888;
 }
