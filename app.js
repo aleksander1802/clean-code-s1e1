@@ -38,7 +38,7 @@ var createNewTaskElement=function(taskString){
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
-    editInput.className="task__edit";
+    editInput.className="task__edit task__edit_end";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="button button__edit";
@@ -82,7 +82,6 @@ var editTask=function(){
     console.log("Edit Task...");
     console.log("Change 'edit' to 'save'");
 
-
     var listItem=this.parentNode;
 
     var editInput=listItem.querySelector('.task__edit');
@@ -102,7 +101,10 @@ var editTask=function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("list__item_edit");    
+    listItem.classList.toggle("list__item_edit"); 
+    editInput.classList.toggle("task__edit_start");
+    editInput.classList.toggle("task__edit_end");
+    label.classList.toggle("label__edit");
 };
 
 
@@ -124,6 +126,10 @@ var taskCompleted=function(){
 
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
+    var label = listItem.querySelector(".label")
+
+    label = label.classList.add("label__linethrough");
+
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
@@ -136,6 +142,11 @@ var taskIncomplete=function(){
     //When the checkbox is unchecked
     //Append the task list item to the #incompleteTasks.
     var listItem=this.parentNode;
+
+    var label = listItem.querySelector(".label")
+
+    label = label.classList.remove("label__linethrough");
+
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
@@ -158,7 +169,7 @@ addButton.addEventListener("click",ajaxRequest);
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
-    var checkBox=taskListItem.querySelector("input[type=checkbox]");
+    var checkBox=taskListItem.querySelector(".checkbox");
     var editButton=taskListItem.querySelector(".button__edit");
     var deleteButton=taskListItem.querySelector(".button__delete");
 

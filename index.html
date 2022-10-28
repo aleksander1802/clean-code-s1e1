@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
   </head>
-  <body>
+  <body class="body">
     <div class="eisenhower">
       <img src="./eisenhower-matrix.jpg" alt="Image of the eisenhower matrix" class="eisenhower__image">
       <a class="eisenhower__info" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
@@ -24,7 +24,7 @@
           <li class="list">
             <input type="checkbox" class="checkbox">
             <label class="label task" class="incompleted__wrapper_label">Pay Bills</label>
-            <input type="text" class="task__edit">
+            <input type="text" class="task__edit task__edit_end">
             <button class="button button__edit">Edit</button>
             <button class="button button__delete">
               <img class="button__delete_image" src="./remove.svg" alt="Close button image">
@@ -32,8 +32,8 @@
           </li>
           <li class="list list__item_edit">
             <input type="checkbox" class="checkbox">
-            <label class="label task">Go Shopping</label>
-            <input type="text" value="Go Shopping" class="task__edit">
+            <label class="label task label__edit">Go Shopping</label>
+            <input type="text" value="Go Shopping" class="task__edit task__edit_start">
             <button class="button button__edit">Save</button>
             <button class="button button__delete">
               <img class="button__delete_image" src="./remove.svg" alt="Close button image">
@@ -46,8 +46,8 @@
         <ul id="completed__tasks" class="completed__wrapper">
           <li class="list">
             <input type="checkbox" class="checkbox completed__wrapper_checkbox" checked>
-            <label class="label task">See the Doctor</label>
-            <input type="text" class="task__edit">
+            <label class="label task label__linethrough">See the Doctor</label>
+            <input type="text" class="task__edit task__edit_end">
             <button class="button button__edit">Edit</button>
             <button class="button button__delete">
               <img class="button__delete_image" src="./remove.svg" alt="Close button image">
